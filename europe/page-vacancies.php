@@ -89,8 +89,8 @@ get_header() ?>
                if ($query->have_posts()) :
                   while ($query->have_posts()) : $query->the_post();
                ?>
-                     <article class="advertisment">
-                        <a href="">
+                     <article class="advertisment-article">
+                        <a href="<?php the_permalink(); ?>">
                            <div class="advertisment__image">
                               <div class="advertisment__image__wrapper">
                                  <?php the_post_thumbnail(); ?>

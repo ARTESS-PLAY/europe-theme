@@ -16,7 +16,7 @@ get_header() ?>
                      <?php the_title(); ?>
                   </div>
                   <div class="vacancy__payment">
-                     <?php the_excerpt(); ?>
+                     <?php the_field('vacancies_title'); ?>
                   </div>
                </div>
                <div class="vacancy__open">
@@ -34,9 +34,7 @@ get_header() ?>
                      <?php endif; ?>
 
                   </div>
-                  <div class="vacancy__image" style="
-                                        background-image: url('<?php bloginfo('template_url'); ?>/assets-europe/img/b1e95fe74f536b55d88c08a282ec7b5c.jpg');
-                                    "></div>
+                  <?php the_post_thumbnail('thumbnail'); ?>
                </div>
             </div>
             <div class="vacancy__requirements card">
