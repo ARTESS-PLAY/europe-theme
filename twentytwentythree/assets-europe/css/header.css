@@ -1,0 +1,137 @@
+@import url('general.css');
+
+header {
+	box-shadow: var(--box-shadow-1);
+	position: sticky;
+	top: 0;
+	width: 100%;
+	padding-top: 20px;
+	z-index: 2;
+	background-color: var(--white);
+}
+
+.header {
+	display: flex;
+	justify-content: flex-start;
+	gap: 52px;
+}
+
+.header__img img {
+	height: 24px;
+
+	object-fit: contain;
+	object-position: center;
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	gap: 36px;
+	flex-wrap: wrap;
+}
+
+.menu-item > a {
+	position: relative;
+	color: var(--black);
+	cursor: pointer;
+	line-height: 1;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+header .menu-item > a {
+	display: block;
+	padding-bottom: 24px;
+}
+
+.menu-item > a:after {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 0;
+	height: 2px;
+	background-color: var(--green-1);
+	content: '';
+	transition: width 0.3s ease-out;
+}
+
+.menu-item > a:hover:after,
+.menu-item > a:focus:after {
+	width: 100%;
+}
+
+.menu-item > a {
+	color: var(--black);
+	transition: 0.4s;
+}
+
+.menu-item > a:hover {
+	color: var(--green-1);
+}
+
+#open_mob_menu,
+.logo-mob {
+	display: none;
+}
+
+@media (max-width: 1024px) {
+	#open_mob_menu {
+		display: flex;
+	}
+	.logo-mob {
+		display: block;
+	}
+
+	.logo-desk {
+		display: none;
+	}
+
+	.header {
+		justify-content: space-between;
+	}
+
+	header {
+		padding-top: 12px;
+		padding-bottom: 12px;
+		z-index: 120;
+		border-bottom: solid 1px rgba(61, 61, 61, 0.111);
+	}
+
+	.header__navigation {
+		position: fixed;
+		width: 100vw;
+		height: calc(101vh - 48px);
+		top: 48px;
+		left: 0;
+		transform: translateY(-120%);
+		transition: 0.3s transform;
+		z-index: 100;
+		background-color: var(--white);
+		display: flex;
+		flex-direction: column;
+		border-top: solid 1px rgba(61, 61, 61, 0.111);
+		gap: 0;
+	}
+
+	.header__navigation > li {
+		width: 100%;
+		font-weight: 600;
+		padding: 0;
+	}
+	header .menu-item > a {
+		padding: 12px 16px;
+	}
+
+	.header__navigation > li:not(:first-child) {
+		border-top: solid 1px var(--light-grey-1);
+	}
+
+	.header__navigation--active {
+		transform: translateY(0px);
+	}
+}
+.current_page_item > a {
+	color: var(--dark-blue-2);
+}

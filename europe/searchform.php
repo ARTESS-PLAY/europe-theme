@@ -1,0 +1,12 @@
+<form role="search" method="get" id="searchform" action="<?php echo home_url('/') ?>" class="wrapper__search-box">
+	<div class="wrapper__search-bar">
+		<input
+			class="input"
+			type="text"
+			placeholder="Введите поисковый запрос, например, Сварщик Германия" />
+	</div>
+	<button value="<?php echo get_search_query() ?>" name="s" id="s" class="wrapper__search-btn">
+		<img class="icon" src="<?php bloginfo('template_url'); ?>/assets-europe/img/search.svg" alt="Поиск" />
+		<p class="wrapper__search-btn-text">Найти работу</p>
+	</button>
+</form>
