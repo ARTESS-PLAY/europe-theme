@@ -7,7 +7,7 @@
 			value="<?php echo get_search_query(); ?>" name="s" id="s" />
 	</div>
 	<button class="wrapper__search-btn">
-		<img class="icon" src="<?php bloginfo('template_url'); ?>/assets-europe/img/search.svg" alt="Поиск" />
+		<img class="icon" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/search.svg" alt="Поиск" />
 		<input type="hidden" name="post_type" value="vacancies" />
 		<p class="wrapper__search-btn-text">Найти работу</p>
 	</button>

@@ -86,7 +86,7 @@ get_header() ?>
                <div>
                   <a class="application__link" href="#">
                      <button class="application__btn">
-                        <img class="application__btn-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/arrow.svg" />
+                        <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
                         <span class="application__btn-text"><?php echo __('Отправить заявку', 'europe'); ?></span>
                      </button>
                   </a>
@@ -99,7 +99,7 @@ get_header() ?>
    <div class="application-btn-fixed">
       <a class="application__link" href="#">
          <button class="application__btn">
-            <img class="application__btn-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/arrow.svg" />
+            <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
             <span class="application__btn-text">Отправить заявку</span>
          </button>
    </div>
@@ -107,7 +107,7 @@ get_header() ?>
 <div class="application-btn-fixed">
    <a class="application__link" href="#">
       <button class="application__btn">
-         <img class="application__btn-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/arrow.svg" />
+         <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
          <span class="application__btn-text">Отправить заявку</span>
       </button>
    </a>

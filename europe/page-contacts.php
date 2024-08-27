@@ -21,7 +21,7 @@ get_header(); ?>
       <div class="contacts__title"><?php the_field('contacts_title'); ?></div>
       <div class="contacts__cols">
          <div class="contacts__article">
-            <img class="contacts__article-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/mail.svg" />
+            <img class="contacts__article-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/mail.svg" />
             <div>
                <p class="contacts__article-title"><?php echo __('E-mail:', 'europe'); ?>
                   <a href="mailto:<?php the_field('contacts_mail'); ?>" class="email"><?php the_field('contacts_mail'); ?></a>
@@ -39,7 +39,7 @@ get_header(); ?>
             </div>
          </div>
          <div class="contacts__article">
-            <img class="contacts__article-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/location.svg" />
+            <img class="contacts__article-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/location.svg" />
             <div class="contacts__article-col">
                <div>
                   <p class="contacts__article-title">Адрес:</p>

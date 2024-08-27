@@ -1,5 +1,6 @@
 <footer class="footer-wrapper">
 	<div class="footer">
+
 		<div class="footer__grid">
 			<div class="footer__title">
 				<p class="footer__title-name"><?php the_field('footer_column-1_title', 'option'); ?></p>
@@ -17,45 +18,61 @@
 			</ul>
 
 		</div>
-		<div class="footer__grid">
-			<div class="footer__title">
-				<p class="footer__title-name"><?php the_field('footer_column-2_title', 'option'); ?></p>
-				<div class="footer__circle"></div>
+
+		<?php if(get_field('footer_column-2_title', 'option')): ?>
+
+			<div class="footer__grid">
+				<div class="footer__title">
+					<p class="footer__title-name"><?php the_field('footer_column-2_title', 'option'); ?></p>
+					<div class="footer__circle"></div>
+				</div>
+
+				<?php if (get_field('footer_column_2_repeater', 'option')): ?>
+					<?php while (has_sub_field('footer_column_2_repeater', 'option')): ?>
+						<a class="footer__link" href="<?php the_sub_field('footer_column_2_repeater-link', 'option'); ?>"><?php the_sub_field('footer_column_2_repeater-name', 'option'); ?></a>
+					<?php endwhile; ?>
+				<?php endif; ?>
+
 			</div>
 
-			<?php if (get_field('footer_column_2_repeater', 'option')): ?>
-				<?php while (has_sub_field('footer_column_2_repeater', 'option')): ?>
-					<a class="footer__link" href="<?php the_sub_field('footer_column_2_repeater-link', 'option'); ?>"><?php the_sub_field('footer_column_2_repeater-name', 'option'); ?></a>
-				<?php endwhile; ?>
-			<?php endif; ?>
+		<?php endif; ?>
 
-		</div>
-		<div class="footer__grid">
-			<div class="footer__title">
-				<p class="footer__title-name"><?php the_field('footer_column-3_title', 'option'); ?></p>
-				<div class="footer__circle"></div>
+		<?php if(get_field('footer_column-3_title', 'option')): ?>
+
+			<div class="footer__grid">
+				<div class="footer__title">
+					<p class="footer__title-name"><?php the_field('footer_column-3_title', 'option'); ?></p>
+					<div class="footer__circle"></div>
+				</div>
+
+				<?php if (get_field('footer_column_3_repeater', 'option')): ?>
+					<?php while (has_sub_field('footer_column_3_repeater', 'option')): ?>
+						<a class="footer__link" href="<?php the_sub_field('footer_column_3_repeater-link', 'option'); ?>"><?php the_sub_field('footer_column_3_repeater-name', 'option'); ?></a>
+					<?php endwhile; ?>
+				<?php endif; ?>
+
 			</div>
 
-			<?php if (get_field('footer_column_3_repeater', 'option')): ?>
-				<?php while (has_sub_field('footer_column_3_repeater', 'option')): ?>
-					<a class="footer__link" href="<?php the_sub_field('footer_column_3_repeater-link', 'option'); ?>"><?php the_sub_field('footer_column_3_repeater-name', 'option'); ?></a>
-				<?php endwhile; ?>
-			<?php endif; ?>
+		<?php endif; ?>
 
-		</div>
-		<div class="footer__grid">
-			<div class="footer__title">
-				<p class="footer__title-name"><?php the_field('footer_column-4_title', 'option'); ?></p>
-				<div class="footer__circle"></div>
+		<?php if(get_field('footer_column-4_title', 'option')): ?>
+
+			<div class="footer__grid">
+				<div class="footer__title">
+					<p class="footer__title-name"><?php the_field('footer_column-4_title', 'option'); ?></p>
+					<div class="footer__circle"></div>
+				</div>
+
+				<?php if (get_field('footer_column_4_repeater', 'option')): ?>
+					<?php while (has_sub_field('footer_column_4_repeater', 'option')): ?>
+						<a class="footer__link" href="<?php the_sub_field('footer_column_4_repeater-link', 'option'); ?>"><?php the_sub_field('footer_column_4_repeater-name', 'option'); ?></a>
+					<?php endwhile; ?>
+				<?php endif; ?>
+
 			</div>
 
-			<?php if (get_field('footer_column_4_repeater', 'option')): ?>
-				<?php while (has_sub_field('footer_column_4_repeater', 'option')): ?>
-					<a class="footer__link" href="<?php the_sub_field('footer_column_4_repeater-link', 'option'); ?>"><?php the_sub_field('footer_column_4_repeater-name', 'option'); ?></a>
-				<?php endwhile; ?>
-			<?php endif; ?>
+		<?php endif; ?>
 
-		</div>
 	</div>
 	<div class="links-wrapper">
 		<div class="links">

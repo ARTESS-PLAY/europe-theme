@@ -116,7 +116,7 @@ get_header() ?>
                            <div class="advertisment__location">
                               <div class="advertisment__location__county">
                                  <div class="advertisment__location__county__flag">
-                                    <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/pl.svg" />
+                                    <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/pl.svg" />
                                  </div>
                                  <p class="advertisment__location__county__name">
                                     <span>Германия</span>, <span>Cloppenburg</span>

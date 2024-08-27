@@ -8,8 +8,8 @@ get_header();
 
 <div class="wrapper" style="background-image:url(<?php the_field('main_img'); ?>">
    <div class="wrapper__arrows">
-      <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/arrow-1.png" class="arrow-1" />
-      <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/arrow-2.png" class="arrow-2" />
+      <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow-1.png" class="arrow-1" />
+      <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow-2.png" class="arrow-2" />
    </div>
    <div class="wrapper__search">
       <div class="wrapper__search-text">
@@ -97,7 +97,7 @@ get_header();
                            </div>
                            <div class="swiper-slide__card-description">
                               <div class="swiper-slide__card-date">
-                                 <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/calendar.svg" />
+                                 <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/calendar.svg" />
                                  <div class="swiper-slide__card-date-text">
                                     <span><?php echo __('Опубликовано:', 'europe'); ?></span>
                                     <span class="swiper-slide__card-date-text-bold"><?php the_date(); ?></span>
@@ -140,7 +140,7 @@ get_header();
                   <div class="swiper-slide__card">
                      <div class="swiper-slide__card-country"></div>
                      <div class="swiper-slide__card-flag">
-                        <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/de.svg" />
+                        <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/de.svg" />
                      </div>
                      <p class="swiper-slide__card-name">Германия</p>
                   </div>
@@ -151,7 +151,7 @@ get_header();
                   <div class="swiper-slide__card">
                      <div class="swiper-slide__card-country"></div>
                      <div class="swiper-slide__card-flag">
-                        <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/nl.svg" />
+                        <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/nl.svg" />
                      </div>
                      <p class="swiper-slide__card-name">Нидерланды</p>
                   </div>
@@ -162,7 +162,7 @@ get_header();
                   <div class="swiper-slide__card">
                      <div class="swiper-slide__card-country"></div>
                      <div class="swiper-slide__card-flag">
-                        <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/dk.svg" />
+                        <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/dk.svg" />
                      </div>
                      <p class="swiper-slide__card-name">Дания</p>
                   </div>
@@ -173,7 +173,7 @@ get_header();
                   <div class="swiper-slide__card">
                      <div class="swiper-slide__card-country"></div>
                      <div class="swiper-slide__card-flag">
-                        <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/pl.svg" />
+                        <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/pl.svg" />
                      </div>
                      <p class="swiper-slide__card-name">Польша</p>
                   </div>
@@ -184,7 +184,7 @@ get_header();
                   <div class="swiper-slide__card">
                      <div class="swiper-slide__card-country"></div>
                      <div class="swiper-slide__card-flag">
-                        <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/ch.svg" />
+                        <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/ch.svg" />
                      </div>
                      <p class="swiper-slide__card-name">Швейцария</p>
                   </div>
@@ -195,7 +195,7 @@ get_header();
                   <div class="swiper-slide__card">
                      <div class="swiper-slide__card-country"></div>
                      <div class="swiper-slide__card-flag">
-                        <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/pl.svg" />
+                        <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/pl.svg" />
                      </div>
                      <p class="swiper-slide__card-name">Польша</p>
                   </div>
@@ -206,7 +206,7 @@ get_header();
                   <div class="swiper-slide__card">
                      <div class="swiper-slide__card-country"></div>
                      <div class="swiper-slide__card-flag">
-                        <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/flags/fr.svg" />
+                        <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/fr.svg" />
                      </div>
                      <p class="swiper-slide__card-name">Франция</p>
                   </div>

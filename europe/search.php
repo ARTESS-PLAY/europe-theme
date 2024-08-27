@@ -32,7 +32,7 @@ get_header(); ?>
 										</div>
 										<div class="swiper-slide__card-description">
 											<div class="swiper-slide__card-date">
-												<img src="<?php bloginfo('template_url'); ?>/assets-europe/img/calendar.svg" />
+												<img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/calendar.svg" />
 												<div class="swiper-slide__card-date-text">
 													<span><?php echo __('Опубликовано:', 'europe'); ?></span>
 													<span class="swiper-slide__card-date-text-bold"><?php the_date(); ?></span>
