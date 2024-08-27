@@ -24,10 +24,10 @@ get_header(); ?>
             <img class="contacts__article-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/mail.svg" />
             <div>
                <p class="contacts__article-title"><?php echo __('E-mail:', 'europe'); ?>
-                  <a href="mailto:<?php the_field('contacts_title'); ?>" class="email"><?php the_field('contacts_mail'); ?></a>
+                  <a href="mailto:<?php the_field('contacts_mail'); ?>" class="email"><?php the_field('contacts_mail'); ?></a>
                </p>
 
-               <?php if (get_field('contacts_repeater-info')): ?>
+               <?php if (get_field('contacts_repeater')): ?>
                   <?php while (has_sub_field('contacts_repeater')): ?>
                      <p class="contacts__article-text">
                         <?php the_sub_field('contacts_repeater-info'); ?>
