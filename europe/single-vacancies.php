@@ -92,25 +92,38 @@ get_header() ?>
                   </a>
                </div>
                <button class="application__offer-btn"><?php echo __('Напечатать предложение'); ?></button>
-            </div>, 'europe'
+            </div>
          </div>
       </div>
    </div>
+
    <div class="application-btn-fixed">
-      <a class="application__link" href="#">
-         <button class="application__btn">
-            <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
-            <span class="application__btn-text">Отправить заявку</span>
-         </button>
-   </div>
-</div>
-<div class="application-btn-fixed">
-   <a class="application__link" href="#">
       <button class="application__btn">
-         <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
-         <span class="application__btn-text">Отправить заявку</span>
+            <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
+            <span class="application__btn-text"><?php echo __('Отправить заявку', 'europe'); ?></span>
       </button>
-   </a>
-</div>
+   </div>
+   <div id="modal" class="modal">
+      <div class="modal__content">
+            <img class="modal__close-btn" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/close.svg" />
+            <div class="modal__form">
+               <p class="modal__title"><?php echo __('Отправить заявку', 'europe'); ?></p>
+               <form class="modal__form-content">
+                  <div class="modal__field">
+                        <label class="modal__label" for="name"><?php echo __('Имя:', 'europe'); ?></label>
+                        <input class="modal__input" type="text" placeholder="Иван Иванов" id="name" name="name" required>
+                  </div>
+                  <div class="modal__field">
+                        <label class="modal__label" for="email"><?php echo __('Email:', 'europe'); ?></label>
+                        <input class="modal__input" type="email" placeholder="example@gmail.com" id="email" name="email" required>
+                  </div>
+                  <button class="application__btn" type="submit">
+                        <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
+                        <span class="application__btn-text"><?php echo __('Отправить', 'europe'); ?></span>
+                  </button>
+               </form>
+            </div>
+      </div>
+   </div>
 </div>
 <?php get_footer() ?>
