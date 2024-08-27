@@ -52,6 +52,7 @@ add_filter('upload_mimes', 'svg_upload_allow');
 function svg_upload_allow($mimes)
 {
    $mimes['svg']  = 'image/svg+xml';
+   $mimes['svg']  = 'image/svg';
 
    return $mimes;
 }
