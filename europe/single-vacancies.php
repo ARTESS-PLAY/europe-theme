@@ -16,7 +16,8 @@ get_header() ?>
                      <?php the_title(); ?>
                   </div>
                   <div class="vacancy__payment">
-                     <?php the_field('vacancies_title'); ?>
+                     <div class="vacancy__price"><?php the_field('vacancies_price'); ?></div>
+                     <div class="vacancy__rate"><?php the_field('vacancies_currency'); ?></div>
                   </div>
                </div>
                <div class="vacancy__open">
@@ -39,10 +40,9 @@ get_header() ?>
             </div>
             <div class="vacancy__requirements card">
                <div class="vacancy__requirements-wrapper">
+
                   <?php if (get_field('vacancies_repeater_req')): ?>
                      <?php while (has_sub_field('vacancies_repeater_req')): ?>
-
-
 
                         <div class="vacancy__requirement">
                            <div class="vacancy__requirement-image <?php echo the_sub_field('vacancies_repeater_req-color'); ?>-bg">
@@ -74,11 +74,9 @@ get_header() ?>
                      <?php endwhile; ?>
                   <?php endif; ?>
 
-
                </div>
             </div>
             <div class="vacancy__description card">
-               <p class="vacancy__description-title">Описание вакансии</p>
                <?php the_content(); ?>
             </div>
          </div>

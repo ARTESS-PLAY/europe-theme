@@ -3,10 +3,12 @@
 		<input
 			class="input"
 			type="text"
-			placeholder="Введите поисковый запрос, например, Сварщик Германия" />
+			placeholder="Введите поисковый запрос, например, Сварщик Германия"
+			value="<?php echo get_search_query(); ?>" name="s" id="s" />
 	</div>
-	<button value="<?php echo get_search_query() ?>" name="s" id="s" class="wrapper__search-btn">
+	<button class="wrapper__search-btn">
 		<img class="icon" src="<?php bloginfo('template_url'); ?>/assets-europe/img/search.svg" alt="Поиск" />
+		<input type="hidden" name="post_type" value="vacancies" />
 		<p class="wrapper__search-btn-text">Найти работу</p>
 	</button>
 </form>

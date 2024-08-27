@@ -80,13 +80,13 @@
 	color: var(--dark-blue-2);
 }
 
-.page-numbers .current {
+.current {
 	color: var(--dark-blue-1);
 	border: solid 2px var(--dark-blue-1);
 	font-weight: 600;
 }
 
-.page-numbers .current:hover {
+.current:hover {
 	color: var(--dark-blue-1);
 }
 

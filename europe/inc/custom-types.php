@@ -2,6 +2,10 @@
 add_action('init', 'create_taxonomy');
 add_action('init', 'register_post_types');
 
+/*
+   Регистрация нового типа записи - Вакансии
+*/
+
 function register_post_types()
 {
 
@@ -41,6 +45,11 @@ function register_post_types()
       'query_var'           => true,
    ]);
 }
+
+/*
+   Регистрация таксономии - Страны
+*/
+
 function create_taxonomy()
 {
 
@@ -67,4 +76,17 @@ function create_taxonomy()
       'hierarchical'          => false,
       'rewrite'               => true,
    ]);
+}
+
+/*
+   Регистрация и подключение options page Acf
+*/
+if (function_exists('acf_add_options_page')) {
+   acf_add_options_page(array(
+      'page_title' => 'Шапка и подвал',
+      'menu_title' => 'Шапка и подвал',
+      'menu_slug' => 'my-options',
+      'capability' => 'edit_posts',
+      'redirect' => false
+   ));
 }
