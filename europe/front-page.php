@@ -27,39 +27,34 @@ get_header();
             $terms = get_terms(array(
                'taxonomy' => 'country',
                'hide_empty' => false,
-            ));
+            ));?>
 
-            if (!empty($terms) && !is_wp_error($terms)) {
-               foreach ($terms as $term) {
+            <?php if (!empty($terms) && !is_wp_error($terms)):?>
+               <?php foreach ($terms as $term): ?>
+                     <div class="swiper-slide">
+                        <a class="swiper-slide__link" href="#">
+                           <div class="flag-wrapper-tooltip">
+                              <div class="flag-wrapper">
+                                 <img
+                                    class="flag-wrapper__img"
+                                    alt="<?php echo esc_html($term->name); ?>"
+                                    width="48"
+                                    height="48"
+                                    src="<?php echo get_field('tax_icon', $term->taxonomy . '_' . $term->term_id)?>" />
 
-            ?>
-                  <div class="swiper-slide">
-                     <a class="swiper-slide__link" href="#">
-                        <div class="flag-wrapper-tooltip">
-                           <div class="flag-wrapper">
-                              <img
-                                 class="flag-wrapper__img"
-                                 alt="<?php echo esc_html($term->name); ?>"
-                                 width="48"
-                                 height="48"
-                                 src=" " />
+                              </div>
+
+                              <div class="tooltip">
+                                 <span class="tooltip__text"><?php echo __('Вакансии - ', 'europe') ?><?php echo esc_html($term->name); ?></span>
+
+                              </div>
 
                            </div>
-
-                           <div class="tooltip">
-                              <span class="tooltip__text"><?php echo __('Вакансии - ', 'europe') ?><?php echo esc_html($term->name); ?></span>
-
-                           </div>
-
-                        </div>
-                        <p class="country-name"><?php echo esc_html($term->name); ?></p>
-                     </a>
-                  </div>
-            <?php
-               }
-            }
-            ?>
-
+                           <p class="country-name"><?php echo esc_html($term->name); ?></p>
+                        </a>
+                     </div>
+                  <?php endforeach;?>
+               <?php endif;?>
          </div>
          <div class="swiper-button-next"></div>
       </div>
@@ -83,12 +78,12 @@ get_header();
                'order' => 'DESC'
             );
 
-            $query = new WP_Query($args);
+            $query = new WP_Query($args); ?>
 
-            if ($query->have_posts()) {
-               while ($query->have_posts()) {
-                  $query->the_post();
-            ?>
+            <?php if ($query->have_posts()): ?>
+               <?php while ($query->have_posts()): ?>
+                  <?php $query->the_post(); ?>
+            
                   <div class="swiper-slide">
                      <a class="swiper-slide__link" href=<?php the_permalink(); ?>>
                         <div class="swiper-slide__card">
@@ -110,15 +105,10 @@ get_header();
                         </div>
                      </a>
                   </div>
-               <?php
-               }
-            } else {
-               ?>
+               <?php endwhile;?>
+            <?php else:?>
                <p><?php echo __('Записей не найдено', 'europe'); ?></p>
-            <?php
-            }
-            ?>
-
+            <?php endif;?>
          </div>
          <div class="swiper-button-next"></div>
       </div>
