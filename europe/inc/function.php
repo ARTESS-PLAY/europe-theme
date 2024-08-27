@@ -18,7 +18,6 @@ function theme_name_scripts()
    wp_enqueue_style('style-main', get_template_directory_uri() . '/assets-europe/css/main.css');
 
 
-
    if (is_page_template('page-vacancies.php')) {
       wp_enqueue_style('style-vacancies', get_template_directory_uri() . '/assets-europe/css/vacancies.css');
    }

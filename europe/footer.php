@@ -69,7 +69,7 @@
 
 			</div>
 			<div class="links__rights">
-				<span class="links__copyright">© Copyright 2014-<?php echo date('Y'); ?></span>
+				<span class="links__copyright"><?php echo __("© Copyright 2014-"); ?><?php echo date('Y'); ?></span>
 				<span class=""><?php the_field('footer_column-1_title', 'option'); ?></span>
 			</div>
 		</div>

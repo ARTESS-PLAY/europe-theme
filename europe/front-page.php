@@ -18,7 +18,7 @@ get_header();
       <?php get_search_form(); ?>
    </div>
    <div class="wrapper__slider">
-      <p class="wrapper__slider-title">Работа в Европе</p>
+      <p class="wrapper__slider-title"><?php the_field('main_country-title') ?></p>
       <div class="swiper wrapper__slider-carousel">
          <div class="swiper-button-prev"></div>
          <div class="swiper-wrapper">
@@ -47,7 +47,7 @@ get_header();
                            </div>
 
                            <div class="tooltip">
-                              <span class="tooltip__text">Вакансии - <?php echo esc_html($term->name); ?></span>
+                              <span class="tooltip__text"><?php echo __('Вакансии - ') ?><?php echo esc_html($term->name); ?></span>
 
                            </div>
 
@@ -69,7 +69,7 @@ get_header();
 <div class="container">
    <div class="articles">
       <div class="articles__title">
-         <p>Последние статьи</p>
+         <p><?php echo __('Последние статьи'); ?></p>
          <div class="articles__title-green"></div>
       </div>
       <div class="swiper-articles articles__list">
@@ -99,7 +99,7 @@ get_header();
                               <div class="swiper-slide__card-date">
                                  <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/calendar.svg" />
                                  <div class="swiper-slide__card-date-text">
-                                    <span>Опубликовано:</span>
+                                    <span><?php echo __('Опубликовано:'); ?></span>
                                     <span class="swiper-slide__card-date-text-bold"><?php the_date(); ?></span>
                                  </div>
                               </div>
@@ -110,25 +110,26 @@ get_header();
                         </div>
                      </a>
                   </div>
-            <?php
+               <?php
                }
             } else {
-               echo 'Записей не найдено.';
+               ?>
+               <p><?php echo __('Записей не найдено'); ?></p>
+            <?php
             }
             ?>
-
 
          </div>
          <div class="swiper-button-next"></div>
       </div>
-      <button class="articles__btn">Увидеть все</button>
+      <button class="articles__btn"><?php echo __('Увидеть все'); ?> </button>
    </div>
 </div>
 <div class="line"></div>
 <div class="container">
    <div class="recommendations">
       <div class="recommendations__title">
-         <p>Советы по работе в Европе</p>
+         <p><?php echo __('советы по странам'); ?></p>
          <div class="recommendations__title-green"></div>
       </div>
       <div class="swiper-recommendations recommendations__list">
@@ -214,7 +215,7 @@ get_header();
          </div>
          <div class="swiper-button-next"></div>
       </div>
-      <button class="recommendations__btn">Увидеть все</button>
+      <button class="recommendations__btn"><?php echo __('Увидеть все'); ?></button>
    </div>
 </div>
 

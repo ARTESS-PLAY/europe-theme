@@ -12,7 +12,7 @@ get_header(); ?>
       </div>
       <div class="blue-bg__block"></div>
       <div class="blue-bg__text">
-         <p class="blue-bg__contact">Контакт</p>
+         <p class="blue-bg__contact"><?php echo __('Контакты'); ?></p>
          <div class="blue-bg__contact-circle"></div>
       </div>
    </div>
@@ -23,7 +23,7 @@ get_header(); ?>
          <div class="contacts__article">
             <img class="contacts__article-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/mail.svg" />
             <div>
-               <p class="contacts__article-title">E-mail:
+               <p class="contacts__article-title"><?php echo __('E-mail:'); ?>
                   <a href="mailto:<?php the_field('contacts_title'); ?>" class="email"><?php the_field('contacts_mail'); ?></a>
                </p>
 
@@ -46,7 +46,7 @@ get_header(); ?>
                   <p class="contacts__article-text"><?php the_field('contacts_adress'); ?></p>
                </div>
                <div>
-                  <p class="contacts__article-title">Рабочие часы:</p>
+                  <p class="contacts__article-title"><?php echo __('Рабочие часы:'); ?></p>
                   <p class="contacts__article-text"><?php the_field('contacts_time'); ?></p>
                </div>
                <div>

@@ -9,7 +9,7 @@ get_header() ?>
 <div class="search">
    <div class="container">
       <h1 class="search__text">
-         Вакансии<span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('vacancies')->publish ?>)</span>
+         <?php echo __('Вакансии'); ?><span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('vacancies')->publish ?>)</span>
       </h1>
       <form action="" method="get" class="search_form">
          <input step="1" placeholder="Введите поисковый запрос, например, Сварщик Германия" type="text"
@@ -24,7 +24,7 @@ get_header() ?>
       <div class="vacancies__up">
          <div id="open_filters_mob"></div>
          <p class="vacancies__text">
-            Количество подходящих вакансий:&nbsp;<span class="vacancies__count"><?php echo wp_count_posts('vacancies')->publish ?></span>.
+            <?php echo __('Количество подходящих вакансий:&nbsp;'); ?><span class="vacancies__count"><?php echo wp_count_posts('vacancies')->publish ?></span>.
          </p>
       </div>
 
@@ -79,7 +79,7 @@ get_header() ?>
          <div class="advertisments vacancies__advertisments">
 
             <?php
-            // Настройка запроса WP_Query
+
             $args = array(
                'post_type' => 'vacancies',
                'posts_per_page' => 5,
@@ -88,9 +88,7 @@ get_header() ?>
 
             $query = new WP_Query($args);
 
-            // Проверка наличия записей
             if ($query->have_posts()) {
-               // Вывод записей
                while ($query->have_posts()) {
                   $query->the_post();
             ?>
@@ -201,9 +199,7 @@ get_header() ?>
             <?php
             } else {
             }
-
-
-            wp_reset_postdata(); // Необходимо сбросить переменные WP_Query
+            wp_reset_postdata();
             ?>
 
          </div>
