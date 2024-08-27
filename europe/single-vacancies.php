@@ -82,17 +82,17 @@ get_header() ?>
          </div>
          <div class="application-wrapper">
             <div class="application">
-               <p class="application__title"><?php echo __('Подавайте заявку сейчас'); ?></p>
+               <p class="application__title"><?php echo __('Подавайте заявку сейчас', 'europe'); ?></p>
                <div>
                   <a class="application__link" href="#">
                      <button class="application__btn">
                         <img class="application__btn-img" src="<?php bloginfo('template_url'); ?>/assets-europe/img/arrow.svg" />
-                        <span class="application__btn-text"><?php echo __('Отправить заявку'); ?></span>
+                        <span class="application__btn-text"><?php echo __('Отправить заявку', 'europe'); ?></span>
                      </button>
                   </a>
                </div>
                <button class="application__offer-btn"><?php echo __('Напечатать предложение'); ?></button>
-            </div>
+            </div>, 'europe'
          </div>
       </div>
    </div>

@@ -12,7 +12,7 @@ get_header(); ?>
 		</div>
 		<div class="blue-bg__block"></div>
 		<div class="blue-bg__text">
-			<p class="blue-bg__contact"><?php echo __('Блог'); ?></p>
+			<p class="blue-bg__contact"><?php echo __('Блог', 'europe'); ?></p>
 			<div class="blue-bg__contact-circle"></div>
 		</div>
 	</div>
@@ -47,7 +47,7 @@ get_header(); ?>
 											<div class="swiper-slide__card-date">
 												<img src="<?php bloginfo('template_url'); ?>/assets-europe/img/calendar.svg" />
 												<div class="swiper-slide__card-date-text">
-													<span><?php echo __('Опубликовано:'); ?></span>
+													<span><?php echo __('Опубликовано:', 'europe'); ?></span>
 													<span class="swiper-slide__card-date-text-bold"><?php the_date(); ?></span>
 												</div>
 											</div>

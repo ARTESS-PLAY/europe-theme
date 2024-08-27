@@ -9,7 +9,7 @@ get_header() ?>
 <div class="search">
    <div class="container">
       <h1 class="search__text">
-         <?php echo __('Вакансии'); ?><span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('vacancies')->publish ?>)</span>
+         <?php echo __('Вакансии', 'europe'); ?><span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('vacancies')->publish ?>)</span>
       </h1>
       <form action="" method="get" class="search_form">
          <input step="1" placeholder="Введите поисковый запрос, например, Сварщик Германия" type="text"
@@ -24,7 +24,7 @@ get_header() ?>
       <div class="vacancies__up">
          <div id="open_filters_mob"></div>
          <p class="vacancies__text">
-            <?php echo __('Количество подходящих вакансий:&nbsp;'); ?><span class="vacancies__count"><?php echo wp_count_posts('vacancies')->publish ?></span>.
+            <?php echo __('Количество подходящих вакансий:&nbsp;', 'europe'); ?><span class="vacancies__count"><?php echo wp_count_posts('vacancies')->publish ?></span>.
          </p>
       </div>
 

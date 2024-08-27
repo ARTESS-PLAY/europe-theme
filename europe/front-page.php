@@ -47,7 +47,7 @@ get_header();
                            </div>
 
                            <div class="tooltip">
-                              <span class="tooltip__text"><?php echo __('Вакансии - ') ?><?php echo esc_html($term->name); ?></span>
+                              <span class="tooltip__text"><?php echo __('Вакансии - ', 'europe') ?><?php echo esc_html($term->name); ?></span>
 
                            </div>
 
@@ -69,7 +69,7 @@ get_header();
 <div class="container">
    <div class="articles">
       <div class="articles__title">
-         <p><?php echo __('Последние статьи'); ?></p>
+         <p><?php echo __('Последние статьи', 'europe'); ?></p>
          <div class="articles__title-green"></div>
       </div>
       <div class="swiper-articles articles__list">
@@ -99,7 +99,7 @@ get_header();
                               <div class="swiper-slide__card-date">
                                  <img src="<?php bloginfo('template_url'); ?>/assets-europe/img/calendar.svg" />
                                  <div class="swiper-slide__card-date-text">
-                                    <span><?php echo __('Опубликовано:'); ?></span>
+                                    <span><?php echo __('Опубликовано:', 'europe'); ?></span>
                                     <span class="swiper-slide__card-date-text-bold"><?php the_date(); ?></span>
                                  </div>
                               </div>
@@ -114,7 +114,7 @@ get_header();
                }
             } else {
                ?>
-               <p><?php echo __('Записей не найдено'); ?></p>
+               <p><?php echo __('Записей не найдено', 'europe'); ?></p>
             <?php
             }
             ?>
@@ -122,14 +122,14 @@ get_header();
          </div>
          <div class="swiper-button-next"></div>
       </div>
-      <button class="articles__btn"><?php echo __('Увидеть все'); ?> </button>
+      <button class="articles__btn"><?php echo __('Увидеть все', 'europe'); ?> </button>
    </div>
 </div>
 <div class="line"></div>
 <div class="container">
    <div class="recommendations">
       <div class="recommendations__title">
-         <p><?php echo __('советы по странам'); ?></p>
+         <p><?php echo __('советы по странам', 'europe'); ?></p>
          <div class="recommendations__title-green"></div>
       </div>
       <div class="swiper-recommendations recommendations__list">
@@ -215,7 +215,7 @@ get_header();
          </div>
          <div class="swiper-button-next"></div>
       </div>
-      <button class="recommendations__btn"><?php echo __('Увидеть все'); ?></button>
+      <button class="recommendations__btn"><?php echo __('Увидеть все', 'europe'); ?></button>
    </div>
 </div>
 
