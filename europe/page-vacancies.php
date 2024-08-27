@@ -88,95 +88,13 @@ get_header() ?>
 
             $query = new WP_Query($args);
 
-            if ($query->have_posts()) {
-               while ($query->have_posts()) {
-                  $query->the_post();
-            ?>
-                  <article class="advertisment-article">
-                     <a href="<?php the_permalink(); ?>">
-                        <div class="advertisment__image">
-                           <div class="advertisment__image__wrapper">
-                              <?php the_post_thumbnail([120, 120]); ?>
-                           </div>
-                        </div>
-                        <div class="advertisment__content">
-                           <div class="advertisment__heard">
-                              <h2>
-                                 <?php the_title(); ?>
-                              </h2>
+            if ($query->have_posts()): ?>
+               <?php while ($query->have_posts()):  $query->the_post();?>
+                     
+                     <?php get_template_part('/template-parts/vacancy-card')?>
 
-                              <div class="advertisment__info">
-                                 <?php echo '<p class="advertisment__info__company">' . get_the_excerpt() . '</p>'; ?>
-                                 <p class="advertisment__info__date">
-                                    <?php the_date('F j, Y'); ?>
+               <?php endwhile; ?>
 
-                                 </p>
-                              </div>
-                           </div>
-                           <div class="advertisment__location">
-                              <div class="advertisment__location__county">
-                                 <div class="advertisment__location__county__flag">
-                                    <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/pl.svg" />
-                                 </div>
-                                 <p class="advertisment__location__county__name">
-                                    <span>Германия</span>, <span>Cloppenburg</span>
-                                 </p>
-                              </div>
-
-                              <div class="advertinsments__salary">
-                                 <p class="advertinsments__salary__sum">
-                                    <?php the_field('vacancies_price'); ?>
-                                 </p>
-                                 <p class="advertinsments__salary__date">
-                                    <?php the_field('vacancies_currency'); ?>
-                                 </p>
-                              </div>
-                           </div>
-                           <div class="advertisment__bottom vacancy__requirements">
-                              <div class="vacancy__requirements-wrapper">
-
-                                 <?php if (get_field('vacancies_repeater_req')): ?>
-                                    <?php while (has_sub_field('vacancies_repeater_req')): ?>
-
-                                       <div class="vacancy__requirement">
-                                          <div class="vacancy__requirement-image <?php echo the_sub_field('vacancies_repeater_req-color'); ?>-bg">
-                                             <img src="<?php the_sub_field('vacancies_repeater_req-img'); ?>" />
-
-                                          </div>
-                                          <p class="vacancy__requirement-text">
-                                             <?php the_sub_field('vacancies_repeater_req-title'); ?>
-
-                                          </p>
-
-                                          <div class="vacancy__requirement-tooltip">
-                                             <div class="tooltip-content">
-                                                <p class="tooltip-text">
-                                                   <?php the_sub_field('vacancies_repeater_req-text'); ?>
-                                             </div>
-                                             </p>
-                                          </div>
-
-                                       </div>
-
-                                       <p class="contacts__article-text"><?php the_sub_field('vacancies_repeater'); ?></p>
-
-                                       <p class="vacancy__condition">
-                                          <span class="vacancy__condition-title"><?php the_sub_field('vacancies_repeater-title'); ?></span>
-                                          <span class="vacancy__condition-note"><?php the_sub_field('vacancies_repeater-text'); ?></span>
-                                       </p>
-
-                                    <?php endwhile; ?>
-                                 <?php endif; ?>
-
-                              </div>
-                           </div>
-                        </div>
-                     </a>
-                  </article>
-               <?php
-
-               }
-               ?>
                <div class="advertisments__pagination pagination">
 
                   <?php
@@ -196,11 +114,7 @@ get_header() ?>
                </div>
 
 
-            <?php
-            } else {
-            }
-            wp_reset_postdata();
-            ?>
+            <?php endif;  wp_reset_postdata(); ?>
 
          </div>
       </div>
