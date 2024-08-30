@@ -23,38 +23,31 @@ get_header();
          <div class="swiper-button-prev"></div>
          <div class="swiper-wrapper">
 
-            <?php
-            $terms = get_terms(array(
-               'taxonomy' => 'country',
-               'hide_empty' => false,
-            ));?>
+            <?php foreach (get_all_counties() as $term): ?>
+               <div class="swiper-slide">
+                  <a class="swiper-slide__link" href="#">
+                     <div class="flag-wrapper-tooltip">
+                        <div class="flag-wrapper">
+                           <img
+                              class="flag-wrapper__img"
+                              alt="<?php echo esc_html($term->name); ?>"
+                              width="48"
+                              height="48"
+                              src="<?php echo get_field('tax_icon', $term->taxonomy . '_' . $term->term_id)?>" />
 
-            <?php if (!empty($terms) && !is_wp_error($terms)):?>
-               <?php foreach ($terms as $term): ?>
-                     <div class="swiper-slide">
-                        <a class="swiper-slide__link" href="#">
-                           <div class="flag-wrapper-tooltip">
-                              <div class="flag-wrapper">
-                                 <img
-                                    class="flag-wrapper__img"
-                                    alt="<?php echo esc_html($term->name); ?>"
-                                    width="48"
-                                    height="48"
-                                    src="<?php echo get_field('tax_icon', $term->taxonomy . '_' . $term->term_id)?>" />
+                        </div>
 
-                              </div>
+                        <div class="tooltip">
+                           <span class="tooltip__text"><?php echo __('Вакансии - ', 'europe') ?><?php echo esc_html($term->name); ?></span>
 
-                              <div class="tooltip">
-                                 <span class="tooltip__text"><?php echo __('Вакансии - ', 'europe') ?><?php echo esc_html($term->name); ?></span>
+                        </div>
 
-                              </div>
-
-                           </div>
-                           <p class="country-name"><?php echo esc_html($term->name); ?></p>
-                        </a>
                      </div>
-                  <?php endforeach;?>
-               <?php endif;?>
+                     <p class="country-name"><?php echo esc_html($term->name); ?></p>
+                  </a>
+               </div>
+            <?php endforeach;?>
+            
          </div>
          <div class="swiper-button-next"></div>
       </div>

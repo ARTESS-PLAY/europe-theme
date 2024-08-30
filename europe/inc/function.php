@@ -41,9 +41,6 @@ function theme_name_scripts()
 
 
    }
-
-  
-
    
 }
 
