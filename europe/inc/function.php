@@ -1,6 +1,7 @@
 <?php
 
 // Логика работы со странами
+require_once __DIR__ . '/constants.php';
 require_once __DIR__ . '/country.php';
 
 /*
@@ -33,6 +34,7 @@ function theme_name_scripts()
 
    if (is_page_template('page-vacancies.php')) {
       wp_enqueue_style('style-vacancies', get_stylesheet_directory_uri() . '/assets/css/vacancies.css');
+      wp_enqueue_script('script-filters', get_stylesheet_directory_uri() . '/assets/js/filters.js', array('jquery'), null, true);
    }
 
    if (is_page_template('front-page.php')) {
@@ -73,14 +75,71 @@ function svg_upload_allow($mimes)
    Реализация поиска по пост тайп Vacancies
 */
 
-add_filter('pre_get_posts', 'custom_search_query');
+// add_filter('pre_get_posts', 'custom_search_query');
 
-function custom_search_query($query)
-{
-   if ($query->is_search() && ! is_admin()) {
-      if (isset($_GET['post_type']) && $_GET['post_type'] === 'vacancies') {
-         $query->set('post_type', 'vacancies');
-      }
+// function custom_search_query($query)
+// {
+//    if ($query->is_search() && ! is_admin()) {
+//       if (isset($_GET['post_type']) && $_GET['post_type'] === 'vacancies') {
+//          $query->set('post_type', 'vacancies');
+//       }
+//    }
+//    return $query;
+// }
+
+/**
+ * Удаление гет-параметра
+ * 
+ * @param string $url - урл
+ * @param string $varname - то, что нужно удалить
+ */
+function removeqsvar($url, $varname) {
+   list($urlpart, $qspart) = array_pad(explode('?', $url), 2, '');
+   parse_str($qspart, $qsvars);
+   unset($qsvars[$varname]);
+   $newqs = http_build_query($qsvars);
+   return $urlpart . '?' . $newqs;
+}
+
+/**
+ * Очищает пагинацию
+ */
+function resetPagination(){
+   $need_reload_pagination = isset($_GET['needReload']) ? rest_sanitize_boolean($_GET['needReload']) : null;
+
+   if($need_reload_pagination ){
+      set_query_var('paged', 1);
+      header('Location: '. removeqsvar( get_pagenum_link(1, false), 'needReload'));
    }
+}
+
+/**
+ * Запрос для получения вакансий
+ * 
+ * @return Wp_Query
+ */
+function get_vacansies(){
+   resetPagination();
+
+   $args = array(
+      'post_type' => 'vacancies',
+      'posts_per_page' => 1,
+      'paged' => get_query_var('paged')
+   );
+
+   add_filter_for_counties($args);
+   add_searchCounties_for_query($args);
+
+   $query = new WP_Query($args);
+
    return $query;
+
+}
+
+/**
+ * Получает ссылку на страницу с вакансиями
+ * (Костыль, ну и пофег)
+ */
+function get_vacansies_link_page(){
+   return get_page_link(VACANCIES_PAGE_ID);
 }

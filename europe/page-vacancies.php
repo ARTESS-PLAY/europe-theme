@@ -4,16 +4,21 @@ Template Name: Шаблон страницы вакансии
 Template Post Type: page
 */
 
+
+$query = get_vacansies();
+$big = 999999999; // need an unlikely integer
+
 get_header() ?>
 
 <div class="search">
    <div class="container">
       <h1 class="search__text">
-         <?php echo __('Вакансии', 'europe'); ?><span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('vacancies')->publish ?>)</span>
+         <?php _e('Вакансии', 'europe'); ?><span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('vacancies')->publish ?>)</span>
       </h1>
-      <form action="" method="get" class="search_form">
-         <input step="1" placeholder="Введите поисковый запрос, например, Сварщик Германия" type="text"
-            class="filed search__filed" />
+      <form action="<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>" method="get" class="search_form" id='search_form'>
+         <input step="1" placeholder="<?php _e("Введите поисковый запрос, например, Сварщик Германия", 'europe'); ?>" type="text"
+            class="filed search__filed" id='search_input' name='searchCountry' value="<?php echo esc_attr($_GET['searchCountry'])?>"/>
+         <input type="hidden" name='searchCountryPrev' value="<?php echo esc_attr($_GET['searchCountry'])?>"/>
          <button class="button__filed" type="submit"></button>
       </form>
    </div>
@@ -24,7 +29,7 @@ get_header() ?>
       <div class="vacancies__up">
          <div id="open_filters_mob"></div>
          <p class="vacancies__text">
-            <?php echo __('Количество подходящих вакансий:&nbsp;', 'europe'); ?><span class="vacancies__count"><?php echo wp_count_posts('vacancies')->publish ?></span>.
+            <?php echo __('Количество подходящих вакансий:&nbsp;', 'europe'); ?><span class="vacancies__count"><?php echo $query->found_posts ?></span>.
          </p>
       </div>
 
@@ -35,15 +40,6 @@ get_header() ?>
          <div class="advertisments__list vacancies__advertisments">
 
             <?php
-
-            $args = array(
-               'post_type' => 'vacancies',
-               'posts_per_page' => 1,
-               'paged' => get_query_var('page')
-            );
-
-            $query = new WP_Query($args);
-
             if ($query->have_posts()): ?>
 
                <?php while ($query->have_posts()):  $query->the_post();?>
@@ -56,13 +52,12 @@ get_header() ?>
 
                <div class="advertisments__pagination pagination">
 
-                  <?php var_dump(get_permalink())?>
-
                   <?php
                   echo paginate_links(array(
-                     'base'    =>  get_permalink() .'?page=%#%' ,
+                     'base' => str_replace( $big, '%#%',  get_pagenum_link( $big, false )  ),
+                     'format' => '?paged=%#%',
                      'current' => max( 1, get_query_var('paged') ),
-                     'total'   => $query->max_num_pages,
+                     'total' =>  $query->max_num_pages,
                      'prev_text'    => '<div class="page-numbers page-numbers--prev "></div>',
                      'next_text'    => '<div class="page-numbers page-numbers--next"></div>',
                      'show_all'     => false,
