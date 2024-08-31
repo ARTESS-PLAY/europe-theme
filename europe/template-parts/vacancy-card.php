@@ -4,6 +4,8 @@
  */
 
 global $post;
+
+$country = get_countries_for_post($post->id)[0];
 ?>
 
 <article class="advertisment-article">
@@ -27,13 +29,18 @@ global $post;
             </div>
         </div>
         <div class="advertisment__location">
+
             <div class="advertisment__location__county">
-                <div class="advertisment__location__county__flag">
-                <img src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/flags/pl.svg" />
-                </div>
-                <p class="advertisment__location__county__name">
-                <span>Германия</span>, <span>Cloppenburg</span>
-                </p>
+                <?php if($country): ?>
+                    <div class="advertisment__location__county__flag">
+                        <img src="<?php echo get_field('tax_icon', $country->taxonomy . '_' . $country->term_id)?>" 
+                             alt="<?php echo $country->name?>"/>
+                    </div>
+                    <p class="advertisment__location__county__name">
+                        <span><?php echo $country->name ?></span> 
+                        <span><?php echo get_field('tax_city', $country->taxonomy . '_' . $country->term_id) ? ', ' . get_field('tax_city', $country->taxonomy . '_' . $country->term_id): ''?></span>
+                    </p>
+                <?php endif;?>
             </div>
 
             <div class="advertinsments__salary">

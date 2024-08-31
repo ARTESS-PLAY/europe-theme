@@ -105,7 +105,7 @@ function get_vacansies(){
 
    $args = array(
       'post_type' => 'vacancies',
-      'posts_per_page' => 1,
+      'posts_per_page' => 10,
       'paged' => get_query_var('paged')
    );
 
@@ -128,7 +128,7 @@ function get_helps_articles(){
 
    $args = array(
       'post_type' => 'post',
-      'posts_per_page' => 1,
+      'posts_per_page' => 10,
       'paged' => get_query_var('paged')
    );
 
@@ -147,4 +147,12 @@ function get_helps_articles(){
  */
 function get_vacansies_link_page(){
    return get_page_link(VACANCIES_PAGE_ID);
+}
+
+/**
+ * Получает ссылку на страницу блога
+ * (Костыль, ну и пофег)
+ */
+function get_help_blog_page(){
+   return get_page_link(BLOG_PAGE_ID);
 }

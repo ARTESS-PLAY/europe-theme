@@ -82,5 +82,17 @@ function add_filter_for_counties(&$args){
     ];
 
     array_push( $args['tax_query'], $coutry_query);
+}
 
+/**
+ * Получает страны для записи
+ * 
+ * @param int - id записи
+ * 
+ * @return Wp_Term[] - массив термов
+ */
+function get_countries_for_post($post_id){
+    $terms = get_the_terms($post_id, 'country');
+
+    return $terms;
 }

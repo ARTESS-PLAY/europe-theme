@@ -86,7 +86,7 @@ if (function_exists('acf_add_options_page')) {
    acf_add_options_page(array(
       'page_title' => __('Шапка и подвал', 'europe'),
       'menu_title' => __('Шапка и подвал', 'europe'),
-      'menu_slug' => __('my-options'),
+      'menu_slug'  => __('my-options'),
       'capability' => __('edit_posts'),
       'redirect' => false
    ));

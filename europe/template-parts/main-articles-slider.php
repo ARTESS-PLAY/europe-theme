@@ -55,6 +55,6 @@
          </div>
          <div class="swiper-button-next"></div>
       </div>
-      <button class="articles__btn"><?php echo __('Увидеть все', 'europe'); ?> </button>
+      <a class="articles__btn" href="<?php echo get_help_blog_page()?>"><?php echo __('Увидеть все', 'europe'); ?></a>
    </div>
 </div>
