@@ -43,8 +43,8 @@ function get_params_countries(){
  * 
  * Функция мутирует исходный запрос
  */
-function add_searchCounties_for_query(&$args){
-    $search = isset($_GET['searchCountry']) ? $_GET['searchCountry'] : null;
+function add_search_for_query(&$args){
+    $search = isset($_GET['search']) ? $_GET['search'] : null;
 
     if(!$search) return;
 

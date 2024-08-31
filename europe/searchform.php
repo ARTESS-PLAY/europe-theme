@@ -5,7 +5,7 @@
 			type="text"
 			id='search_input'
 			placeholder="<?php _e('Введите поисковый запрос, например, Сварщик Германия', 'europe'); ?>"
-			value="<?php echo get_search_query(); ?>" name="searchCountry" id="search_input" />
+			value="<?php echo get_search_query(); ?>" name="search" id="search_input" />
 	</div>
 	<button class="wrapper__search-btn">
 		<img class="icon" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/search.svg" alt="Поиск" />

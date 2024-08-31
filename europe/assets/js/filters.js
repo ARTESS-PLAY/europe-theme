@@ -42,7 +42,7 @@ $(document).ready(function () {
             const action = $(this).attr('action');
 
             const s = $(this).find('#search_input').val().trim();
-            const sP = $(this).find('input[name="searchCountryPrev"]').val().trim();
+            const sP = $(this).find('input[name="searchPrev"]').val().trim();
             const url = new URL(action);
 
             if (s !== sP) {
@@ -50,10 +50,10 @@ $(document).ready(function () {
                 url.searchParams.append('needReload', true);
             }
 
-            url.searchParams.delete('searchCountry');
+            url.searchParams.delete('search');
 
             if (s.length > 0) {
-                url.searchParams.append('searchCountry', s);
+                url.searchParams.append('search', s);
             }
 
             window.location.replace(url.href);

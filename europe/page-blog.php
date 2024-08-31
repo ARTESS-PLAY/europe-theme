@@ -1,11 +1,11 @@
 <?php
 /*
-Template Name: Шаблон страницы вакансии
+Template Name: Шаблон блога
 Template Post Type: page
 */
 
 
-$query = get_vacansies();
+$query = get_helps_articles();
 $big = 999999999; // need an unlikely integer
 
 get_header() ?>
@@ -13,10 +13,10 @@ get_header() ?>
 <div class="search">
    <div class="container">
       <h1 class="search__text">
-         <?php _e('Вакансии', 'europe'); ?><span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('vacancies')->publish ?>)</span>
+         <?php _e('Советы по работе', 'europe'); ?><span class="text--green-1">.</span><span class="search__count">(<?php echo wp_count_posts('post')->publish ?>)</span>
       </h1>
       <form action="<?php echo "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>" method="get" class="search_form" id='search_form'>
-         <input step="1" placeholder="<?php _e("Введите поисковый запрос, например, Сварщик Германия", 'europe'); ?>" type="text"
+         <input step="1" placeholder="<?php _e("Введите поисковый запрос, например, что посмотреть в париже", 'europe'); ?>" type="text"
             class="filed search__filed" id='search_input' name='search' value="<?php echo esc_attr($_GET['search'])?>"/>
          <input type="hidden" name='searchPrev' value="<?php echo esc_attr($_GET['search'])?>"/>
          <button class="button__filed" type="submit"></button>
@@ -29,7 +29,7 @@ get_header() ?>
       <div class="vacancies__up">
          <div id="open_filters_mob"></div>
          <p class="vacancies__text">
-            <?php echo __('Количество подходящих вакансий:&nbsp;', 'europe'); ?><span class="vacancies__count"><?php echo $query->found_posts ?></span>.
+            <?php echo __('Количество статей:&nbsp;', 'europe'); ?><span class="vacancies__count"><?php echo $query->found_posts ?></span>.
          </p>
       </div>
 
@@ -44,7 +44,7 @@ get_header() ?>
 
                <?php while ($query->have_posts()):  $query->the_post();?>
                      
-                     <?php get_template_part('/template-parts/vacancy-card')?>
+                     <?php get_template_part('/template-parts/post-card')?>
 
                <?php endwhile; ?>
                

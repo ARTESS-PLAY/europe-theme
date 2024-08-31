@@ -53,7 +53,7 @@ function register_post_types()
 function create_taxonomy()
 {
 
-   register_taxonomy('country', ['vacancies'], [
+   register_taxonomy('country', ['vacancies', 'post'], [
       'label'                 => '',
       'labels'                => [
          'name'              => __('Страны', 'europe'),

@@ -25,14 +25,13 @@ function theme_name_scripts()
       wp_enqueue_style('style-vacancy', get_stylesheet_directory_uri() . '/assets/css/vacancy.css');
       wp_enqueue_script('script-modal', get_stylesheet_directory_uri() . '/assets/js/modal.js', array('jquery'), null, true);
    }
+
    if (is_page_template('page-contacts.php')) {
       wp_enqueue_style('style-contacts', get_stylesheet_directory_uri() . '/assets/css/contacts.css');
       wp_enqueue_script('script-contacts', get_stylesheet_directory_uri() . '/assets/js/contacts.js', array('jquery'), null, true);
-
    }
 
-
-   if (is_page_template('page-vacancies.php')) {
+   if (is_page_template('page-vacancies.php') || is_page_template('page-blog.php')) {
       wp_enqueue_style('style-vacancies', get_stylesheet_directory_uri() . '/assets/css/vacancies.css');
       wp_enqueue_script('script-filters', get_stylesheet_directory_uri() . '/assets/js/filters.js', array('jquery'), null, true);
    }
@@ -40,8 +39,6 @@ function theme_name_scripts()
    if (is_page_template('front-page.php')) {
       wp_enqueue_style('style-main', get_stylesheet_directory_uri() . '/assets/css/main.css');
       wp_enqueue_script('script-main-page', get_stylesheet_directory_uri() . '/assets/js/mainPage.js', array('jquery'), null, true);
-
-
    }
    
 }
@@ -71,21 +68,6 @@ function svg_upload_allow($mimes)
    return $mimes;
 }
 
-/*
-   Реализация поиска по пост тайп Vacancies
-*/
-
-// add_filter('pre_get_posts', 'custom_search_query');
-
-// function custom_search_query($query)
-// {
-//    if ($query->is_search() && ! is_admin()) {
-//       if (isset($_GET['post_type']) && $_GET['post_type'] === 'vacancies') {
-//          $query->set('post_type', 'vacancies');
-//       }
-//    }
-//    return $query;
-// }
 
 /**
  * Удаление гет-параметра
@@ -128,7 +110,30 @@ function get_vacansies(){
    );
 
    add_filter_for_counties($args);
-   add_searchCounties_for_query($args);
+   add_search_for_query($args);
+
+   $query = new WP_Query($args);
+
+   return $query;
+
+}
+
+/**
+ * Запрос для получения советов
+ * 
+ * @return Wp_Query
+ */
+function get_helps_articles(){
+   resetPagination();
+
+   $args = array(
+      'post_type' => 'post',
+      'posts_per_page' => 1,
+      'paged' => get_query_var('paged')
+   );
+
+   add_filter_for_counties($args);
+   add_search_for_query($args);
 
    $query = new WP_Query($args);
 

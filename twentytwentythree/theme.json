@@ -3,16 +3,6 @@
     "version": 2,
     "customTemplates": [
         {
-            "name": "blank",
-            "postTypes": ["page", "post"],
-            "title": "Blank"
-        },
-        {
-            "name": "blog-alternative",
-            "postTypes": ["page"],
-            "title": "Blog (Alternative)"
-        },
-        {
             "name": "404",
             "postTypes": ["page"],
             "title": "404"
