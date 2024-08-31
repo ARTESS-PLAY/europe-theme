@@ -3,6 +3,7 @@
 // Логика работы со странами
 require_once __DIR__ . '/constants.php';
 require_once __DIR__ . '/country.php';
+require_once __DIR__ . '/ajax.php';
 
 /*
    Подключение стилей и скриптов

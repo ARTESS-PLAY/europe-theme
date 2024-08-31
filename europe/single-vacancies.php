@@ -108,7 +108,7 @@ get_header() ?>
             <img class="modal__close-btn" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/close.svg" />
             <div class="modal__form">
                <p class="modal__title"><?php echo __('Отправить заявку', 'europe'); ?></p>
-               <form class="modal__form-content">
+               <form class="modal__form-content" id='modal-leed'>
                   <div class="modal__field">
                         <label class="modal__label" for="name"><?php echo __('Имя:', 'europe'); ?></label>
                         <input class="modal__input" type="text" placeholder="Иван Иванов" id="name" name="name" required>
@@ -117,12 +117,18 @@ get_header() ?>
                         <label class="modal__label" for="email"><?php echo __('Email:', 'europe'); ?></label>
                         <input class="modal__input" type="email" placeholder="example@gmail.com" id="email" name="email" required>
                   </div>
+                  <?php wp_nonce_field('send_leed', '_send_leed_nonce')?>
                   <button class="application__btn" type="submit">
                         <img class="application__btn-img" src="<?php echo get_stylesheet_directory_uri() ?> /assets/img/arrow.svg" />
                         <span class="application__btn-text"><?php echo __('Отправить', 'europe'); ?></span>
                   </button>
                </form>
             </div>
+      </div>
+   </div>
+   <div id="modal_thx"  class="modal">
+      <div class="modal__content modal__tnx">
+         <p><?php _e('Спасибо! Мы скоро с Вами свяжемся.')?></p>
       </div>
    </div>
 </div>

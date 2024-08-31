@@ -20,16 +20,20 @@
     --dark-blue-2: #336aab;
     --input-placeholder: #8d949c;
     --orange: #ff641e;
+    --red: #ab1010;
     --box-shadow-1: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
     --box-shadow-2: 0 0 10px rgba(0, 0, 0, 0.1);
     --box-shadow-3: 0 0 10px #fff;
-    --box-shadow-4: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-1);
-    --box-shadow-5: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-2);
+    --box-shadow-4: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+        var(--tw-shadow-1);
+    --box-shadow-5: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+        var(--tw-shadow-2);
     --box-shadow-6: rgba(0, 0, 0, 0.306) 0px 0px 8px;
     --box-shadow-7: 0 4px 8px rgba(34, 34, 34, 0.7);
-    --box-shadow-8: 0 3px 8px 8px rgba(66, 68, 90, .28);
-    --box-shadow-9: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow-3);
-    --tw-shadow-1: 0px 3px 6px #00000029; 
+    --box-shadow-8: 0 3px 8px 8px rgba(66, 68, 90, 0.28);
+    --box-shadow-9: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+        var(--tw-shadow-3);
+    --tw-shadow-1: 0px 3px 6px #00000029;
     --tw-shadow-2: 0px 0px 3px #0000001f;
     --tw-shadow-3: 0px 2px 3px #0000000a;
     --tw-ring-offset-shadow: 0 0 #0000;

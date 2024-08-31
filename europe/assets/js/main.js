@@ -35,19 +35,19 @@ $(document).ready(function () {
         addSroll();
         return;
     });
-
-    /**
-     * Удаление скролла
-     */
-    function noSroll() {
-        $('html').addClass('no-scroll');
-        $('body').addClass('no-scroll');
-    }
-    /**
-     * Добавление скролла
-     */
-    function addSroll() {
-        $('html').removeClass('no-scroll');
-        $('body').removeClass('no-scroll');
-    }
 });
+
+/**
+ * Удаление скролла
+ */
+function noSroll() {
+    $('html').addClass('no-scroll');
+    $('body').addClass('no-scroll');
+}
+/**
+ * Добавление скролла
+ */
+function addSroll() {
+    $('html').removeClass('no-scroll');
+    $('body').removeClass('no-scroll');
+}
