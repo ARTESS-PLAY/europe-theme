@@ -54,15 +54,15 @@ get_header() ?>
 
                   <?php
                   echo paginate_links(array(
-                     'base' => str_replace( $big, '%#%',  get_pagenum_link( $big, false )  ),
-                     'format' => '?paged=%#%',
-                     'current' => max( 1, get_query_var('paged') ),
-                     'total' =>  $query->max_num_pages,
-                     'prev_text'    => '<div class="page-numbers page-numbers--prev "></div>',
-                     'next_text'    => '<div class="page-numbers page-numbers--next"></div>',
-                     'show_all'     => false,
-                     'end_size'     => 1,
-                     'mid_size'     => 1,
+                     'base'      => str_replace( $big, '%#%',  get_pagenum_link( $big, false )  ),
+                     'format'    => '?paged=%#%',
+                     'current'   => max( 1, get_query_var('paged') ),
+                     'total'     =>  $query->max_num_pages,
+                     'prev_text' => '',
+                     'next_text' => '',
+                     'show_all'  => false,
+                     'end_size'  => 1,
+                     'mid_size'  => 1,
 
                   ));
                   ?>

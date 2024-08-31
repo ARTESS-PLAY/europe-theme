@@ -18,18 +18,16 @@
                   <img src="<?php the_field('header_logo-mobile', 'option'); ?>" alt="Logo" class="logo-mob" />
                </a>
             </div>
-            <ul class="navigation header__navigation">
-
-               <?php
-               wp_nav_menu([
+            <?php
+               $menu = strip_tags(wp_nav_menu([
                   'theme_location'  => 'header_menu',
-                  'container'       => false,
-                  'echo'            => true,
+                  'container_class' => 'navigation header__navigation',
+                  'container'       => 'nav',
+                  'echo'            => false,
                   'items_wrap'      => '%3$s',
-               ]);
-               ?>
-
-            </ul>
+               ]), '<a><nav>' );
+               echo str_replace("<a" ,'<a class="link link--blue"', $menu);
+            ?>
             <div class="burger_menu" id="open_mob_menu">
                <span></span>
                <span></span>
